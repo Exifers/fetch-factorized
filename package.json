@@ -12,6 +12,11 @@
   "browser": "dist/fetch-factorized.umd.js",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "jest-fetch-mock": "^2.1.2",
     "rollup": "^1.20.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0"
@@ -19,7 +24,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "test": "node test/test.js",
+    "test": "jest",
     "pretest": "npm run build"
   },
   "keywords": [
@@ -33,5 +38,11 @@
   ],
   "files": [
     "dist"
-  ]
+  ],
+  "jest": {
+    "automock": false,
+    "setupFiles": [
+      "./setupJest.js"
+    ]
+  }
 }
