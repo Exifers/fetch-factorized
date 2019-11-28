@@ -9,7 +9,7 @@ A set of handy functions to perform requests on an API very easily.
 Features:
 
 - Deadly simple
-- Out-of-the-box json support and form-data
+- Out-of-the-box support for json and form-data
 - Elegant error-handling
 - Cross-Site requests
 - CSRF protection
@@ -28,6 +28,7 @@ Features:
         - [HEAD](#head)
         - [TRACE](#trace)
     - [Configuring CSRF Token](#configuring-csrf-token)
+    - [Using Form-Data](#using-form-data)
 
 
 ## Install
@@ -172,6 +173,20 @@ const request = configure({
   csrfHeaderName: 'string' // default 'XCSRF-Token',
   csrfHeaderValue: 'string' | () => 'string'
 })
+```
+
+### Using Form-Data
+If your API requires form-data to be sent, just pass in a FormData instance for the ```body``` parameter.
+
+```javascript
+import { post } from 'fetch-factorized'
+
+let todo = new FormData()
+todo.append('text', 'Clean my room')
+todo.append('done', 'false')
+post('/api/todos/', todo)
+    .then(json => console.log(json))
+    .catch(error => console.log(error))
 ```
 
 ## Missing something ?
