@@ -1,0 +1,21 @@
+{
+  "name": "fetch-factorized",
+  "version": "1.0.0",
+  "module": "dist/fetch-factorized.esm.js",
+  "browser": "dist/fetch-factorized.umd.js",
+  "dependencies": {},
+  "devDependencies": {
+    "rollup": "^1.20.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "node test/test.js",
+    "pretest": "npm run build"
+  },
+  "files": [
+    "dist"
+  ]
+}
