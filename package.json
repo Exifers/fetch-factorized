@@ -1,5 +1,12 @@
 {
   "name": "fetch-factorized",
+  "description": "A collection of functions to make API calls very simple",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Exifers/fetch-factorized.git"
+  },
+  "author": "Exifers",
+  "license": "MIT",
   "version": "1.5.0",
   "module": "dist/fetch-factorized.esm.js",
   "browser": "dist/fetch-factorized.umd.js",
@@ -15,6 +22,15 @@
     "test": "node test/test.js",
     "pretest": "npm run build"
   },
+  "keywords": [
+    "javascript",
+    "fetch",
+    "api",
+    "HTTP",
+    "AJAX",
+    "utils",
+    "request"
+  ],
   "files": [
     "dist"
   ]
