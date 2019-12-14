@@ -1,4 +1,4 @@
-import { configure } from '../src/main'
+import { configure } from '../main'
 
 test('configure csrfHeaderName', (done) => {
   const customFetch = jest.fn(() => {
@@ -18,6 +18,7 @@ test('configure csrfHeaderName', (done) => {
       customFetch
     })[verb]('/')
       .then(() => {
+        // @ts-ignore
         expect(customFetch.mock.calls[0][1]['headers'][csrfHeaderName]).toEqual(
           ''
         )
@@ -43,6 +44,7 @@ test('configure csrfHeaderValue', (done) => {
       customFetch
     })[verb]('/')
       .then(() => {
+        // @ts-ignore
         expect(customFetch.mock.calls[0][1]['headers']['X-CSRFToken']).toEqual(
           csrfHeaderValue
         )
@@ -68,6 +70,7 @@ test('configure csrfHeaderValue as a function', (done) => {
       customFetch
     })[verb]('/')
       .then(() => {
+        // @ts-ignore
         expect(customFetch.mock.calls[0][1]['headers']['X-CSRFToken']).toEqual(
           csrfHeaderValue()
         )
