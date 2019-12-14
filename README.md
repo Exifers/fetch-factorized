@@ -8,7 +8,7 @@ A set of handy functions to perform requests on an API very easily.
 
 Features:
 
-- Deadly simple
+- Simple & lightweight
 - Out-of-the-box support for json and form-data
 - Elegant error-handling
 - Cross-Site requests
