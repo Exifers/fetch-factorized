@@ -4,7 +4,7 @@ import sourceMaps from "rollup-plugin-sourcemaps";
 
 export default [
   {
-    input: 'src/main.js',
+    input: 'src/main.ts',
     output: [
       {
         name: 'fetchFactorized',
@@ -13,7 +13,7 @@ export default [
         exports: 'named'
       },
       {file: pkg.module, format: 'es'},
-      {file: pkg.main, format: 'cjs'}
+      {file: pkg.main, format: 'cjs', exports: 'named'}
     ],
     plugins: [
       typescript(),

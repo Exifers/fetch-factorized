@@ -1,4 +1,5 @@
-import { getCookie } from './cookie'
+import {getCookie} from './cookie'
+import {config, Object, fetchBaseType} from './types'
 
 const handleErrors = response => {
   if (!response.ok) {
@@ -16,7 +17,7 @@ const eval_ = (f) => {
   return f
 }
 
-export const fetchBaseBody = (url, body, context = {}, config = {}) => {
+export const fetchBaseBody = (url, body, context: {} = {}, config: config = {}) => {
   let adaptedBody = body
   if (body instanceof FormData) {
     adaptedBody = body
@@ -35,7 +36,7 @@ export const fetchBaseBody = (url, body, context = {}, config = {}) => {
   )
 }
 
-export const fetchBase = (url, context, config = {}) => {
+export const fetchBase: fetchBaseType = (url: string, context: Object, config: config = {}) => {
   context.headers = context.headers || {}
 
   if (config.insertContentType) {
