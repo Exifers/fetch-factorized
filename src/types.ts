@@ -6,11 +6,13 @@ export interface config {
   csrfHeaderName?: string
   csrfHeaderValue?: string | (() => string),
   csrfCookieName?: string
-  customFetch?: (string, object) => Promise<Json>
+  customFetch?: (string, object) => Promise<Object>
 }
 
-export type Object = {[key:string]: any}
+export type context = {[key:string]: any}
 
-export type Json = {[key:string]: Json} | Json[] | string | number | boolean | null; 
+export type json = {[key:string]: json} | json[] | string | number | boolean | null
 
-export type fetchBaseType = (url: string, context: Object, config:config) => Promise<Json>
+export type bodyType = json | FormData
+
+export type fetchBaseType = (url: string, context: context, config:config) => Promise<json>

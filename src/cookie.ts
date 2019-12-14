@@ -1,5 +1,5 @@
 
-export function getCookie (cname) {
+export function getCookie (cname : string) : string {
   let name = cname + '='
   let decodedCookie = decodeURIComponent(document.cookie)
   let ca = decodedCookie.split(';')

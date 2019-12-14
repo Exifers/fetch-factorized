@@ -1,39 +1,26 @@
-export declare const get: (url: any) => Promise<import("./types").Object>;
-export declare const post: (url: any, body: any) => Promise<import("./types").Object>;
-export declare const put: (url: any, body: any) => Promise<import("./types").Object>;
-export declare const patch: (url: any, body: any) => Promise<import("./types").Object>;
-export declare const delete_: (url: any) => Promise<import("./types").Object>;
-export declare const options: (url: any) => Promise<import("./types").Object>;
-export declare const head: (url: any) => Promise<import("./types").Object>;
-export declare const trace: (url: any) => Promise<import("./types").Object>;
-export declare const configure: (config: any) => {
-    get: (url: any) => Promise<import("./types").Object>;
-    post: (url: any, body: any) => Promise<import("./types").Object>;
-    put: (url: any, body: any) => Promise<import("./types").Object>;
-    patch: (url: any, body: any) => Promise<import("./types").Object>;
-    delete: (url: any) => Promise<import("./types").Object>;
-    options: (url: any) => Promise<import("./types").Object>;
-    head: (url: any) => Promise<import("./types").Object>;
-    trace: (url: any) => Promise<import("./types").Object>;
+import { json, config, bodyType } from "./types";
+export declare const get: (url: string) => Promise<json>;
+export declare const post: (url: string, body: bodyType) => Promise<json>;
+export declare const put: (url: string, body: bodyType) => Promise<json>;
+export declare const patch: (url: string, body: bodyType) => Promise<json>;
+export declare const delete_: (url: string) => Promise<json>;
+export declare const options: (url: string) => Promise<json>;
+export declare const head: (url: string) => Promise<json>;
+export declare const trace: (url: string) => Promise<json>;
+export declare const configure: (config: config) => {
+    [key: string]: any;
 };
 declare const _default: {
-    get: (url: any) => Promise<import("./types").Object>;
-    post: (url: any, body: any) => Promise<import("./types").Object>;
-    put: (url: any, body: any) => Promise<import("./types").Object>;
-    patch: (url: any, body: any) => Promise<import("./types").Object>;
-    'delete': (url: any) => Promise<import("./types").Object>;
-    options: (url: any) => Promise<import("./types").Object>;
-    head: (url: any) => Promise<import("./types").Object>;
-    trace: (url: any) => Promise<import("./types").Object>;
-    configure: (config: any) => {
-        get: (url: any) => Promise<import("./types").Object>;
-        post: (url: any, body: any) => Promise<import("./types").Object>;
-        put: (url: any, body: any) => Promise<import("./types").Object>;
-        patch: (url: any, body: any) => Promise<import("./types").Object>;
-        delete: (url: any) => Promise<import("./types").Object>;
-        options: (url: any) => Promise<import("./types").Object>;
-        head: (url: any) => Promise<import("./types").Object>;
-        trace: (url: any) => Promise<import("./types").Object>;
+    get: (url: string) => Promise<json>;
+    post: (url: string, body: bodyType) => Promise<json>;
+    put: (url: string, body: bodyType) => Promise<json>;
+    patch: (url: string, body: bodyType) => Promise<json>;
+    'delete': (url: string) => Promise<json>;
+    options: (url: string) => Promise<json>;
+    head: (url: string) => Promise<json>;
+    trace: (url: string) => Promise<json>;
+    configure: (config: config) => {
+        [key: string]: any;
     };
 };
 export default _default;

@@ -1,6 +1,7 @@
-import { fetchBase, fetchBaseBody } from './base'
+import {fetchBase, fetchBaseBody} from './base'
+import {json, config, bodyType} from "./types";
 
-export const _get = (url, config) => (
+export const _get = (url: string, config: config): Promise<json> => (
   fetchBase(
     url,
     {
@@ -9,7 +10,7 @@ export const _get = (url, config) => (
     config
   )
 )
-export const _post = (url, body, config) => (
+export const _post = (url: string, body: bodyType, config: config): Promise<json> => (
   fetchBaseBody(
     url,
     body,
@@ -23,7 +24,7 @@ export const _post = (url, body, config) => (
     }
   )
 )
-export const _put = (url, body, config) => (
+export const _put = (url: string, body: bodyType, config: config): Promise<json> => (
   fetchBaseBody(
     url,
     body,
@@ -37,7 +38,7 @@ export const _put = (url, body, config) => (
     }
   )
 )
-export const _patch = (url, body, config) => (
+export const _patch = (url: string, body: bodyType, config: config): Promise<json> => (
   fetchBaseBody(
     url,
     body,
@@ -51,7 +52,7 @@ export const _patch = (url, body, config) => (
     }
   )
 )
-export const _delete_ = (url, config) => (
+export const _delete_ = (url: string, config: config): Promise<json> => (
   fetchBase(url,
     {
       method: 'DELETE',
@@ -62,7 +63,7 @@ export const _delete_ = (url, config) => (
     }
   )
 )
-export const _options = (url, config) => (
+export const _options = (url: string, config: config): Promise<json> => (
   fetchBase(
     url,
     {
@@ -71,7 +72,7 @@ export const _options = (url, config) => (
     config
   )
 )
-export const _head = (url, config) => (
+export const _head = (url: string, config: config): Promise<json> => (
   fetchBase(url,
     {
       method: 'HEAD',
@@ -79,7 +80,7 @@ export const _head = (url, config) => (
     config
   )
 )
-export const _trace = (url, config) => (
+export const _trace = (url: string, config: config): Promise<json> => (
   fetchBase(url,
     {
       method: 'TRACE',

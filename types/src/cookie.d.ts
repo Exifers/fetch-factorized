@@ -1,1 +1,1 @@
-export declare function getCookie(cname: any): string;
+export declare function getCookie(cname: string): string;
