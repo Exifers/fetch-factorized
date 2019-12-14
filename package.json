@@ -7,7 +7,7 @@
   },
   "author": "Exifers",
   "license": "MIT",
-  "version": "1.5.4",
+  "version": "1.5.3",
   "main": "dist/fetch-factorized.cjs.js",
   "module": "dist/fetch-factorized.esm.js",
   "browser": "dist/fetch-factorized.umd.js",
@@ -43,11 +43,5 @@
   "files": [
     "dist",
     "types"
-  ],
-  "jest": {
-    "automock": false,
-    "setupFiles": [
-      "./setupJest.ts"
-    ]
-  }
+  ]
 }
