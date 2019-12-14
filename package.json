@@ -7,11 +7,11 @@
   },
   "author": "Exifers",
   "license": "MIT",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "main": "dist/fetch-factorized.cjs.js",
   "module": "dist/fetch-factorized.esm.js",
   "browser": "dist/fetch-factorized.umd.js",
-  "types": "types/main.d.ts",
+  "types": "dist/main.d.ts",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.7.4",
