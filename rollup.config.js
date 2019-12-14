@@ -1,27 +1,23 @@
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
 import pkg from './package.json';
+import typescript from 'rollup-plugin-typescript2';
+import sourceMaps from "rollup-plugin-sourcemaps";
 
 export default [
-	{
-		input: 'src/main.js',
-		output: {
-			name: 'fetch-factorized',
-			file: pkg.browser,
-			format: 'umd'
-		},
-		plugins: [
-			resolve(),
-			commonjs()
-		]
-	},
-
-	{
-		input: 'src/main.js',
-		external: ['ms'],
-		output: [
-			{ file: pkg.module, format: 'es' },
-			{ file: pkg.main, format: 'cjs' }
-		]
-	}
+  {
+    input: 'src/main.js',
+    output: [
+      {
+        name: 'fetchFactorized',
+        file: pkg.browser,
+        format: 'umd',
+        exports: 'named'
+      },
+      {file: pkg.module, format: 'es'},
+      {file: pkg.main, format: 'cjs'}
+    ],
+    plugins: [
+      typescript(),
+      sourceMaps()
+    ]
+  }
 ];
