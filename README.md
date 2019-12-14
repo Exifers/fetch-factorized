@@ -4,11 +4,11 @@
 [![downloads](https://img.shields.io/npm/dm/fetch-factorized.svg?style=flat-square)](https://npm-stat.com/charts.html?package=fetch-factorized)
 
 
-A set of handy functions to perform requests on an API very easily.
+A simple library to perform HTTP requests from the browser.
 
 Features:
 
-- Simple & lightweight
+- Small & lightweight
 - Out-of-the-box support for json and form-data
 - Elegant error-handling
 - Cross-Site requests
