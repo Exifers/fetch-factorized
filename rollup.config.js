@@ -16,7 +16,7 @@ export default [
       {file: pkg.main, format: 'cjs', exports: 'named'}
     ],
     plugins: [
-      typescript(),
+      typescript({useTsconfigDeclarationDir: true}),
       sourceMaps()
     ]
   }

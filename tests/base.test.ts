@@ -1,4 +1,4 @@
-import {fetchBase, fetchBaseBody} from '../base'
+import {fetchBase, fetchBaseBody} from '../src/base'
 
 test('fetchBase returns the response from fetch call', (done) => {
   const response = {someKey: 'someValue'}

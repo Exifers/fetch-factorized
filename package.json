@@ -11,7 +11,7 @@
   "main": "dist/fetch-factorized.cjs.js",
   "module": "dist/fetch-factorized.esm.js",
   "browser": "dist/fetch-factorized.umd.js",
-  "types": "dist/main.d.ts",
+  "types": "types/src/main.d.ts",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.7.4",
@@ -28,8 +28,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "test": "jest",
-    "pretest": "npm run build"
+    "test": "jest"
   },
   "keywords": [
     "javascript",
@@ -41,6 +40,7 @@
     "request"
   ],
   "files": [
-    "dist"
+    "dist",
+    "types/src"
   ]
 }
