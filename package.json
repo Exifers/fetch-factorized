@@ -7,7 +7,7 @@
   },
   "author": "Exifers",
   "license": "MIT",
-  "version": "1.5.8",
+  "version": "1.5.9",
   "main": "dist/fetch-factorized.cjs.js",
   "module": "dist/fetch-factorized.esm.js",
   "browser": "dist/fetch-factorized.umd.js",
