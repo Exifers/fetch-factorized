@@ -2,22 +2,13 @@ import {getCookie} from './cookie'
 import {bodyType, config, context, fetchBaseType} from './types'
 
 const decodeResponse = (response, handler): Promise<any> => {
-  try {
-    return response.json().then(handler)
-  }
-  catch {
-    try {
-      return response.formData().then(handler)
-    }
-    catch {
-      try {
-        return response.text().then(handler)
-      }
-      catch {
+  return response.json().then(handler).catch(() => {
+    return response.formData().then(handler).catch(() => {
+      return response.text().then(handler).catch(() => {
         return Promise.resolve(undefined).then(handler)
-      }
-    }
-  }
+      })
+    })
+  })
 }
 
 const handleResponse = (response: any): any => {
