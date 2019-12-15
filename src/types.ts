@@ -15,4 +15,4 @@ export type json = {[key:string]: json} | json[] | string | number | boolean | n
 
 export type bodyType = json | FormData
 
-export type fetchBaseType = (url: string, context: context, config:config) => Promise<json>
+export type fetchBaseType = (url: string, context: context, config:config) => Promise<any>

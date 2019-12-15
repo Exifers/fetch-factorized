@@ -15,4 +15,4 @@ export declare type json = {
     [key: string]: json;
 } | json[] | string | number | boolean | null;
 export declare type bodyType = json | FormData;
-export declare type fetchBaseType = (url: string, context: context, config: config) => Promise<json>;
+export declare type fetchBaseType = (url: string, context: context, config: config) => Promise<any>;

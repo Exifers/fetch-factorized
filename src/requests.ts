@@ -1,7 +1,7 @@
 import {fetchBase, fetchBaseBody} from './base'
-import {json, config, bodyType} from "./types";
+import {config, bodyType} from "./types";
 
-export const _get = (url: string, config: config): Promise<json> => (
+export const _get = (url: string, config: config): Promise<any> => (
   fetchBase(
     url,
     {
@@ -10,7 +10,7 @@ export const _get = (url: string, config: config): Promise<json> => (
     config
   )
 )
-export const _post = (url: string, body: bodyType, config: config): Promise<json> => (
+export const _post = (url: string, body: bodyType, config: config): Promise<any> => (
   fetchBaseBody(
     url,
     body,
@@ -24,7 +24,7 @@ export const _post = (url: string, body: bodyType, config: config): Promise<json
     }
   )
 )
-export const _put = (url: string, body: bodyType, config: config): Promise<json> => (
+export const _put = (url: string, body: bodyType, config: config): Promise<any> => (
   fetchBaseBody(
     url,
     body,
@@ -38,7 +38,7 @@ export const _put = (url: string, body: bodyType, config: config): Promise<json>
     }
   )
 )
-export const _patch = (url: string, body: bodyType, config: config): Promise<json> => (
+export const _patch = (url: string, body: bodyType, config: config): Promise<any> => (
   fetchBaseBody(
     url,
     body,
@@ -52,7 +52,7 @@ export const _patch = (url: string, body: bodyType, config: config): Promise<jso
     }
   )
 )
-export const _delete_ = (url: string, config: config): Promise<json> => (
+export const _delete_ = (url: string, config: config): Promise<any> => (
   fetchBase(url,
     {
       method: 'DELETE',
@@ -63,7 +63,7 @@ export const _delete_ = (url: string, config: config): Promise<json> => (
     }
   )
 )
-export const _options = (url: string, config: config): Promise<json> => (
+export const _options = (url: string, config: config): Promise<any> => (
   fetchBase(
     url,
     {
@@ -72,7 +72,7 @@ export const _options = (url: string, config: config): Promise<json> => (
     config
   )
 )
-export const _head = (url: string, config: config): Promise<json> => (
+export const _head = (url: string, config: config): Promise<any> => (
   fetchBase(url,
     {
       method: 'HEAD',
@@ -80,7 +80,7 @@ export const _head = (url: string, config: config): Promise<json> => (
     config
   )
 )
-export const _trace = (url: string, config: config): Promise<json> => (
+export const _trace = (url: string, config: config): Promise<any> => (
   fetchBase(url,
     {
       method: 'TRACE',
