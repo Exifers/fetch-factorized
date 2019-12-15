@@ -1,13 +1,32 @@
 import {getCookie} from './cookie'
 import {bodyType, config, context, fetchBaseType} from './types'
 
-const handleErrors = (response: any): any => {
+const decodeResponse = (response, handler): Promise<any> => {
+  try {
+    return response.json().then(handler)
+  }
+  catch {
+    try {
+      return response.formData().then(handler)
+    }
+    catch {
+      try {
+        return response.text().then(handler)
+      }
+      catch {
+        return Promise.resolve(undefined).then(handler)
+      }
+    }
+  }
+}
+
+const handleResponse = (response: any): any => {
   if (!response.ok) {
-    return response.json().then(json => {
-      throw json
+    return decodeResponse(response, decoded => {
+      throw decoded
     })
   }
-  return response
+  return decodeResponse(response, decoded => decoded)
 }
 
 const eval_ = (f: string | (() => string)): string => {
@@ -50,6 +69,5 @@ export const fetchBase: fetchBaseType = (url: string, context: context, config: 
   }
 
   return (config.customFetch || fetch)(url, context)
-    .then(handleErrors)
-    .then(response => response.json())
+    .then(handleResponse)
 }
